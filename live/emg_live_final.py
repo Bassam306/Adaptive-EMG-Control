@@ -8,7 +8,7 @@ Architecture:
     PC (this script)
       ├─ Reads filtered EMG from Master ESP32 over USB serial (COM13)
       ├─ Classifies gesture with Residual CNN every 50 ms
-      ├─ Accumulates 5-second majority vote
+      ├─ Accumulates 2-second majority vote
       ├─ Computes MVC-normalised effort from raw window RMS
       └─ Sends "G<idx>,E<effort_pct>\n" back to Master ESP32
 
@@ -51,9 +51,9 @@ warnings.filterwarnings("ignore")
 # ─────────────────────────────────────────────────────────────
 # CONFIGURATION
 # ─────────────────────────────────────────────────────────────
-COM_PORT   = "COM13"
+COM_PORT   = "COMXX" # Your ESP COM PORT
 BAUD_RATE  = 230400
-MODEL_DIR  = r"C:\Users\bassam\Desktop\gam3aa\SENIOR YEAR\RP\deep learning claude\emg_results_final"
+MODEL_DIR  = r"YOUR_MODEL_DIRECTORY"
 
 FS            = 300
 WINDOW_MS     = 300

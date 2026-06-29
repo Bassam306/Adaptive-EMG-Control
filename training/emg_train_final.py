@@ -5,12 +5,12 @@ Trains the Residual CNN on the merged dataset (4-class: Closed, Hook, Pencil, Re
 and saves all files needed for live inference.
 
 Dataset:
-    merged_closed.csv  — 30 reps (10 original + 20 new)
+    merged_closed.csv  — 30 reps 
     merged_hook.csv    — 30 reps
     merged_pencil.csv  — 30 reps
     Rest extracted from rest intervals of the above three files.
 
-Saves to emg_results_final/:
+Saves
     residual_cnn_final.pth   — model weights
     scaler_mean.npy          — StandardScaler mean  (90 values)
     scaler_scale.npy         — StandardScaler scale (90 values)
@@ -42,12 +42,12 @@ warnings.filterwarnings("ignore")
 # CONFIGURATION
 # ─────────────────────────────────────────────────────────────
 DATA_FILES = {
-    "closed": "merged_closed.csv",
-    "hook":   "merged_hook.csv",
-    "pencil": "merged_pencil.csv",
+    "closed": "closed.csv",
+    "hook":   "hook.csv",
+    "pencil": "pencil.csv",
 }
-DATA_DIR   = r"C:\Users\bassam\Desktop\gam3aa\SENIOR YEAR\RP\deep learning claude"
-OUTPUT_DIR = r"C:\Users\bassam\Desktop\gam3aa\SENIOR YEAR\RP\deep learning claude\emg_results_final"
+DATA_DIR   = r"YOUR_DATASET_DIRECTORY"  # Path to the folder containing the CSV files
+OUTPUT_DIR = r"YOUR_OUTPUT_DIRECTORY"  # Path to the folder where results will be saved
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 FS          = 300
